@@ -1,0 +1,66 @@
+.event-wrapper {
+    background: $darkBlue1000;
+    padding-left: 90px;
+}
+
+.profile-header {
+    background: $skyBlue1000;
+    @include boxShadow($eventHeaderShadows);
+    .profile-pic {
+        width: 90px;
+        overflow: hidden;
+        img {
+            width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+        }
+    }
+    .heading-text {
+        width: calc(100% - 90px);
+        color: $white;
+    }
+}
+.event-calender{
+    padding-top: 80px;
+    .custom-tab{
+        border: none;
+        li{
+            &:first-child{
+                .nav-link{
+                    padding-left: 0px;
+                }
+            }
+        }
+        .nav-link{
+            color: $darkBlue800;
+            font-size: 13px; 
+            border: none;           
+            &:hover{
+                border: none;
+                color: $white;
+            }
+            &.active{
+                background: transparent;
+                border: none;
+                color: $white;
+            }
+        }
+    }
+    #eventTabContent{
+        padding-top: 50px;
+        #event-day-slider{
+            .event-day{
+                color: $darkBlue800;
+                font-size: $eventBigFont;
+                display: block;
+                @extend .light-font;
+            }
+            .event-date{
+                color: $white;
+                font-size: $eventBigFont;
+                display: block;
+                @extend .light-font;
+            }
+        }
+    }
+}

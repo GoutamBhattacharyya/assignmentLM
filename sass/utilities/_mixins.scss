@@ -1,0 +1,11 @@
+@mixin boxShadow($params) {
+    -webkit-box-shadow: $params;
+    -moz-box-shadow: $params;
+    box-shadow: $params;
+  }
+
+@mixin rounded($radius: 0.5em) {
+    -webkit-border-radius: .5em; 
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+}
