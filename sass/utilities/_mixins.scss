@@ -2,10 +2,118 @@
     -webkit-box-shadow: $params;
     -moz-box-shadow: $params;
     box-shadow: $params;
-  }
+}
 
-@mixin rounded($radius: 0.5em) {
-    -webkit-border-radius: .5em; 
-    -moz-border-radius: .5em;
-    border-radius: .5em;
+@mixin rounded($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+.rounded-image {
+    @include rounded(50px);
+    overflow: hidden;
+    img{
+        width: 100%;
+    }
+}
+
+//
+//  MEDIA QUERIES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// A map of breakpoints.
+$breakpoints: (xs: 576px,
+    sm: 768px,
+    md: 992px,
+    lg: 1200px,
+    pt: "portrait",
+    ld: "landscape"
+);
+
+
+// @include respond-above(sm) {}
+@mixin respond-above($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+        // Write the media query.
+        @media (min-width: $breakpoint-value) {
+            @content;
+        }        
+    }
+    @else {
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+
+//
+//  RESPOND BELOW
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include respond-below(sm) {}
+@mixin respond-below($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+        @media (max-width: ($breakpoint-value - 1)) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+
+//
+//  RESPOND BETWEEN
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include respond-between(sm, md) {}
+@mixin respond-between($lower, $upper) {
+    @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+        $lower-breakpoint: map-get($breakpoints, $lower);
+        $upper-breakpoint: map-get($breakpoints, $upper);
+        @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+            @content;
+        }
+    }
+
+    @else {
+        @if (map-has-key($breakpoints, $lower)==false) {
+            @warn 'Your lower breakpoint was invalid: #{$lower}.';
+        }
+        @if (map-has-key($breakpoints, $upper)==false) {
+            @warn 'Your upper breakpoint was invalid: #{$upper}.';
+        }
+    }
+}
+
+//
+// For portrait
+//----------------------------------------------
+
+// @include respond-for-portrait(pt) {}
+@mixin respond-for-portrait($portrait) {
+    @if map-has-key($breakpoints, $portrait) {
+        $breakpoint-value: map-get($breakpoints, $portrait);
+        @media (orientation: $breakpoint-value) {
+            @content;
+        }
+    }
+}
+
+//
+// For landscape
+//----------------------------------------------
+
+// @include respond-for-landscape(pt) {}
+@mixin respond-for-landscape($landscape) {
+    @if map-has-key($breakpoints, $landscape) {
+        $breakpoint-value: map-get($breakpoints, $landscape);
+        @media (orientation: $breakpoint-value) {
+            @content;
+        }
+    }
 }

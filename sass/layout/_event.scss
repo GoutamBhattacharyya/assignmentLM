@@ -1,65 +1,186 @@
 .event-wrapper {
-    background: $darkBlue1000;
-    padding-left: 90px;
+    background: $darkBlue1000;    
+    &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 645px);
+        background: $darkBlue900;
+    }
+
+    @include respond-below(sm) {
+        @include respond-for-landscape(ld) {
+            overflow: visible;
+        }
+    }
 }
 
 .profile-header {
+    margin-left: 90px;
+    min-height: 106px;
     background: $skyBlue1000;
     @include boxShadow($eventHeaderShadows);
+    position: relative;
+    z-index: 2;
+
     .profile-pic {
         width: 90px;
         overflow: hidden;
+
         img {
             width: 100%;
             min-height: 100%;
             object-fit: cover;
         }
     }
+
     .heading-text {
         width: calc(100% - 90px);
         color: $white;
     }
 }
-.event-calender{
+
+.event-calender {
     padding-top: 80px;
-    .custom-tab{
+
+    .custom-tab {
+        margin-left: 90px;
         border: none;
-        li{
-            &:first-child{
-                .nav-link{
+
+        li {
+            &:first-child {
+                .nav-link {
                     padding-left: 0px;
                 }
             }
         }
-        .nav-link{
+
+        .nav-link {
             color: $darkBlue800;
-            font-size: 13px; 
-            border: none;           
-            &:hover{
+            font-size: 13px;
+            border: none;
+
+            &:hover {
                 border: none;
                 color: $white;
             }
-            &.active{
+
+            &.active {
                 background: transparent;
                 border: none;
                 color: $white;
             }
         }
     }
-    #eventTabContent{
+
+    #eventTabContent {
         padding-top: 50px;
-        #event-day-slider{
-            .event-day{
+
+        #event-day-slider {
+            width: calc(100% - 18%);
+            padding-left: 90px;
+            margin-bottom: 40px;
+
+            .event-day {
                 color: $darkBlue800;
                 font-size: $eventBigFont;
                 display: block;
                 @extend .light-font;
             }
-            .event-date{
+
+            .event-date {
                 color: $white;
                 font-size: $eventBigFont;
                 display: block;
                 @extend .light-font;
+            }
+
+            .event-slider-control {
+                width: 24px;
+                height: 24px;
+                top: auto;
+                bottom: 10px;
+                opacity: 0.3;
+
+                &:hover {
+                    opacity: .8;
+                }
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    fill: $white;
+                }
+
+                &.carousel-control-prev {
+                    left: auto;
+                    right: 30px;
+                }
+
+                &.carousel-control-next {
+                    left: auto;
+                    right: 0px;
+                }
+            }
+        }
+    }
+
+    .event-week-content,
+    .event-month-content {
+        padding-left: 90px;
+    }
+
+    .calender-big-text {
+        color: $darkBlue800;
+        font-size: $eventBigFont;
+        display: block;
+        @extend .light-font;
+    }
+
+    .todays-events {
+        background: $darkBlue900;
+        position: relative;
+        max-height: 200px;
+        overflow-y: auto;
+
+        ul {
+            li {
+                &.active {
+                    background: $darkBlue1000;
+                }
+            }
+        }
+
+        &::-webkit-scrollbar {
+            width: 1em;
+        }
+
+        &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: darkgrey;
+            outline: 1px solid slategrey;
+        }
+
+        ul {
+            li {
+                padding: 10px 90px;
+
+                &:hover {
+                    background: $darkBlue1000;
+                }
+
+                .event-time {
+                    display: block;
+                    color: $darkBlue800;
+                    font-size: 13px;
+                }
+
+                .event-details {
+                    color: $white;
+                }
             }
         }
     }

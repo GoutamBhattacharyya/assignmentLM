@@ -1,87 +1,277 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-    <!-- Theme css -->
-    <link rel="stylesheet" href="css/style.css">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Assignment Goutam Bhattacharyya</title>
-  </head>
-  <body>
-    <div class="container-fluid vh-100">
-        <div class="d-flex align-items-stretch vh-100">          
-            <div class="col-5 event-wrapper pr-0">
-              <section>
-                  <div class="profile-header d-flex align-items-stretch">
-                      <div class="profile-pic">
-                        <img src="images/user-image-one.jpg" alt="user" title="user">
-                      </div>
-                      <div class="heading-text pl-3 align-self-end">
-                        <h4 class="pl-4 pt-5 pb-3 pr-4">What is your next event?</h4>
-                      </div>
-                  </div>
-                </section>
-                <main>
-                  <div class="event-calender">
-                      <ul class="nav nav-tabs custom-tab" id="myTab" role="tablist">
-                          <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#day" role="tab" aria-controls="day" aria-selected="true">Day</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#week" role="tab" aria-controls="week" aria-selected="false">Week</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#month" role="tab" aria-controls="month" aria-selected="false">Month</a>
-                          </li>
-                        </ul>
-                        <div class="tab-content" id="eventTabContent">
-                            <div class="tab-pane fade show active" id="day" role="tabpanel" aria-labelledby="day-tab">
-                                <div id="event-day-slider" class="carousel slide carousel-fade" data-interval="false" data-ride="carousel">
-                                    <div class="carousel-inner">
-                                      <div class="carousel-item active">
-                                          <span class="event-day">Monday</span>
-                                          <span class="event-date">28 Sep</span>
-                                      </div>
-                                      <div class="carousel-item">
-                                          <span class="event-day">Tuesday</span>
-                                          <span class="event-date">29 Sep</span>
-                                      </div>
-                                      <div class="carousel-item">
-                                          <span class="event-day">Wednesday</span>
-                                          <span class="event-date">30 Sep</span>
-                                      </div>
-                                    </div>
-                                    <a class="carousel-control-prev" href="#event-day-slider" role="button" data-slide="prev">
-                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                      <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#event-day-slider" role="button" data-slide="next">
-                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                      <span class="sr-only">Next</span>
-                                    </a>
-                                  </div>
-                            </div>
-                            <div class="tab-pane fade" id="week" role="tabpanel" aria-labelledby="week-tab">...</div>
-                            <div class="tab-pane fade" id="month" role="tabpanel" aria-labelledby="month-tab">eeeee</div>
-                          </div>
-                  </div>
-                </main>
+  <!-- Bootstrap CSS -->
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+  <!-- Theme css -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Assignment Goutam Bhattacharyya</title>
+</head>
+
+<body>
+  <div class="container-fluid vh-100 p-0">
+    <div class="d-flex align-items-stretch">
+      <div class="col-12 col-md-5 event-wrapper pr-0 pl-0">
+        <section>
+          <div class="profile-header d-flex align-items-stretch">
+            <div class="profile-pic">
+              <img src="images/user-image-one.jpg" alt="user" title="user">
             </div>
-            <div class="col-7">
-                <div class="row">
-                    <div class="col-8"></div>
-                    <div class="col-4"></div>
+            <div class="heading-text pl-3 align-self-end">
+              <h4 class="pl-4 pt-5 pb-3 pr-4">What is your next event?</h4>
+            </div>
+          </div>
+        </section>
+        <main>
+          <div class="event-calender">
+            <ul class="nav nav-tabs custom-tab" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="day-tab" data-toggle="tab" href="#day" role="tab" aria-controls="day"
+                  aria-selected="true">Day</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="week-tab" data-toggle="tab" href="#week" role="tab" aria-controls="week"
+                  aria-selected="false">Week</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="month-tab" data-toggle="tab" href="#month" role="tab" aria-controls="month"
+                  aria-selected="false">Month</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="eventTabContent">
+              <div class="tab-pane fade show active" id="day" role="tabpanel" aria-labelledby="day-tab">
+                <div id="event-day-slider" class="carousel slide" data-interval="false" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <span class="event-day">Monday</span>
+                      <span class="event-date">28 Sep</span>
+                    </div>
+                    <div class="carousel-item">
+                      <span class="event-day">Tuesday</span>
+                      <span class="event-date">29 Sep</span>
+                    </div>
+                    <div class="carousel-item">
+                      <span class="event-day">Wednesday</span>
+                      <span class="event-date">30 Sep</span>
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev event-slider-control" href="#event-day-slider" role="button"
+                    data-slide="prev">
+                    <svg version="1.1" id="Capa_3" xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 256 256"
+                      style="enable-background:new 0 0 256 256;" xml:space="preserve">
+                      <g>
+                        <g>
+                          <polygon
+                            points="207.093,30.187 176.907,0 48.907,128 176.907,256 207.093,225.813 109.28,128" />
+                        </g>
+                      </g>
+                    </svg>
+                  </a>
+                  <a class="carousel-control-next event-slider-control" href="#event-day-slider" role="button"
+                    data-slide="next">
+                    <svg version="1.1" id="Capa_2" xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="306px" height="306px"
+                      viewBox="0 0 306 306" style="enable-background:new 0 0 306 306;" xml:space="preserve">
+                      <g>
+                        <g id="chevron-right">
+                          <polygon points="94.35,0 58.65,35.7 175.95,153 58.65,270.3 94.35,306 247.35,153" />
+                        </g>
+                      </g>
+                    </svg>
+                  </a>
                 </div>
-            </div>            
+                <div class="todays-events smooth-scroll">
+                  <ul class="list-unstyled m-0">
+                    <li class="active">
+                      <span class="event-time">13:00 - 14:00</span>
+                      <span class="event-details">Lunch with Petr</span>
+                    </li>
+                    <li>
+                      <span class="event-time">17:00 - 19:00</span>
+                      <span class="event-details">Drink with Jessica</span>
+                    </li>
+                    <li>
+                      <span class="event-time">20:00 - 00:00</span>
+                      <span class="event-details">Birthday party</span>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="week" role="tabpanel" aria-labelledby="week-tab">
+                <div class="event-week-content">
+                  <span class="calender-big-text">Week View</span>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="month" role="tabpanel" aria-labelledby="month-tab">
+                <div class="event-month-content">
+                  <span class="calender-big-text">Month View</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <div class="col-12 col-md-7 p-0">
+        <div class="d-flex feed-header justify-content-between">
+          <div class="feed-menu align-self-end pt-5">
+            <ul class="list-unstyled">
+              <li class="active">
+                <a href="#">Feed</a>
+              </li>
+              <li>
+                <a href="#">Popular</a>
+              </li>
+              <li>
+                <a href="#">Around</a>
+              </li>
+            </ul>
+          </div>
+          <div class="feed-header-right align-self-end pb-4">
+            <a href="#">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                <g>
+                  <path
+                    d="M495,466.2L377.2,348.4c29.2-35.6,46.8-81.2,46.8-130.9C424,103.5,331.5,11,217.5,11C103.4,11,11,103.5,11,217.5   S103.4,424,217.5,424c49.7,0,95.2-17.5,130.8-46.7L466.1,495c8,8,20.9,8,28.9,0C503,487.1,503,474.1,495,466.2z M217.5,382.9   C126.2,382.9,52,308.7,52,217.5S126.2,52,217.5,52C308.7,52,383,126.3,383,217.5S308.7,382.9,217.5,382.9z" />
+                </g>
+              </svg>
+            </a>
+            <a href="#">
+              <span class="comment-number">3</span>
+              <svg height="480pt" viewBox="0 -24 480 480" width="480pt" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m408 0h-336c-39.746094.0429688-71.9570312 32.253906-72 72v208c.0429688 39.746094 32.253906 71.957031 72 72h22.238281l-14.078125 70.398438c-.605468 3.027343.585938 6.128906 3.054688 7.976562s5.78125 2.109375 8.511718.671875l150.25-79.046875h166.023438c39.746094-.042969 71.957031-32.253906 72-72v-208c-.042969-39.746094-32.253906-71.9570312-72-72zm56 280c-.035156 30.914062-25.085938 55.964844-56 56h-168c-1.300781 0-2.578125.316406-3.726562.921875l-137.128907 72.175781 12.695313-63.496094c.480468-2.355468-.121094-4.800781-1.640625-6.660156-1.519531-1.863281-3.796875-2.941406-6.199219-2.941406h-32c-30.914062-.035156-55.964844-25.085938-56-56v-208c.035156-30.914062 25.085938-55.964844 56-56h336c30.914062.035156 55.964844 25.085938 56 56zm0 0" />
+              </svg>
+            </a>
+            <a href="#">
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60"
+                style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                <g>
+                  <path d="M8,22c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8S12.411,22,8,22z" />
+                  <path d="M52,22c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8S56.411,22,52,22z" />
+                  <path d="M30,22c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8S34.411,22,30,22z" />
+                </g>
+              </svg>
+            </a>
+          </div>
         </div>
-    </div>  
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+        <div class="d-flex body-content-area">
+          <div class="col-8">
+            <section class="feed-content-area">
+              <article>
+                
+              </article>
+            </section>
+          </div>
+          <div class="col-4 h-100 right-sidebar">
+            <section class="mb-5">
+              <div class="recent-activity">
+                <h3>Recent Activity</h3>
+                <ul class="list-unstyled">
+                  <li>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="recent-images-icon">
+                        <img src="images/user-image-three.jpg" alt="" title="">
+                      </span>
+                      <div class="user-activity">
+                        <a href="#" class="user-name">Piter Novak</a> liked <a href="#" class="event-name">Danil's
+                          event</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="recent-images-icon">
+                        <img src="images/user-image-two.jpg" alt="" title="">
+                      </span>
+                      <div class="user-activity">
+                        <a href="#" class="user-name">Rebecca Hart Novak</a> commented <a href="#"
+                          class="event-name">Jussica's event</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="recent-images-icon">
+                        <img src="images/user-image-four.jpg" alt="" title="">
+                      </span>
+                      <div class="user-activity">
+                        <a href="#" class="user-name">Eric Obrien</a> liked <a href="#" class="event-name">John's
+                          event</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="recent-images-icon">
+                        <img src="images/user-image-five.jpg" alt="" title="">
+                      </span>
+                      <div class="user-activity">
+                        <a href="#" class="user-name">Nicole Green</a> commented <a href="#" class="event-name">jana's
+                          event</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="recent-images-icon">
+                        <img src="images/user-image-three.jpg" alt="" title="">
+                      </span>
+                      <div class="user-activity">
+                        <a href="#" class="user-name">Piter Novak</a> liked <a href="#" class="event-name">Danil's
+                          event</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="mb-5">
+              <div class="who-to-follow">
+                <h3>Who to follow</h3>
+                <ul class="list-unstyled">
+                  <li>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="recent-images-icon">
+                        <img src="images/user-image-two.jpg" alt="" title="">
+                      </span>
+                      <div class="user-activity">
+                        <a href="#" class="user-name">Emily Ramos</a>
+                        <span class="user-designation">Designer</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="recent-images-icon">
+                        <img src="images/user-image-four.jpg" alt="" title="">
+                      </span>
+                      <div class="user-activity">
+                        <a href="#" class="user-name">Daniel Price</a>
+                        <span class="user-designation">Writer</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+
 </html>

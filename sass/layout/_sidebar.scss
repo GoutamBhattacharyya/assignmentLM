@@ -1,0 +1,40 @@
+.right-sidebar {
+    background: $gray300;
+    padding: 30px;
+    h3{
+        padding: 0px;
+        margin: 0 0 20px 0;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: $gray800;
+    }
+}
+.recent-activity {
+    li{
+        padding: 10px 0px;
+    }
+    .recent-images-icon {
+        @extend .rounded-image;
+        width: 40px;
+        height: 40px;
+    }
+    .user-activity {
+        @extend .activity-details;
+        width: calc(100% - 55px);
+    }
+}
+.who-to-follow {
+    li{
+        padding: 10px 0px;
+    }
+    .recent-images-icon {
+        @extend .rounded-image;
+        width: 55px;
+        height:55px;
+    }
+    .user-activity {
+        @extend .activity-details;
+        width: calc(100% - 70px);
+    }
+}
