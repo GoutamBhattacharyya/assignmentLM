@@ -22,7 +22,8 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // A map of breakpoints.
-$breakpoints: (xs: 576px,
+$breakpoints: (
+    xs: 576px,
     sm: 768px,
     md: 992px,
     lg: 1200px,
@@ -117,3 +118,18 @@ $breakpoints: (xs: 576px,
         }
     }
 }
+
+@mixin placeholder-color($color) {
+    &::-webkit-input-placeholder { /* WebKit browsers */
+        color: $color;
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: $color;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: $color;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: $color;
+    }
+  }

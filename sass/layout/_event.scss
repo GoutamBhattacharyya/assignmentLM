@@ -1,5 +1,11 @@
 .event-wrapper {
     background: $darkBlue1000;    
+    @include respond-below(md) {
+        position: absolute;
+        z-index: 2;
+        left: -100vw;
+        height: 100%;
+    }
     &:after {
         content: "";
         position: absolute;
@@ -17,6 +23,9 @@
 
 .profile-header {
     margin-left: 90px;
+    @include respond-between(md, lg){
+        margin-left: 45px;
+    } 
     min-height: 106px;
     background: $skyBlue1000;
     @include boxShadow($eventHeaderShadows);
@@ -42,9 +51,21 @@
 
 .event-calender {
     padding-top: 80px;
-
+    @include respond-for-landscape(pt) {
+        @include respond-below(sm) {
+            padding-top: 30px;
+        }
+    }
+    @include respond-for-landscape(ld) {
+        @include respond-below(sm) {
+            padding-top: 20px;
+        }
+    }
     .custom-tab {
         margin-left: 90px;
+        @include respond-between(md, lg){
+            margin-left: 45px;
+        }
         border: none;
 
         li {
@@ -75,15 +96,42 @@
 
     #eventTabContent {
         padding-top: 50px;
+        @include respond-for-landscape(pt) {
+            @include respond-below(sm) {
+                padding-top: 20px;
+            }
+        }
+        @include respond-for-landscape(ld) {
+            @include respond-below(sm) {
+                padding-top: 0px;
+            }
+        }
 
         #event-day-slider {
             width: calc(100% - 18%);
             padding-left: 90px;
+            @include respond-between(md, lg){
+                padding-left: 45px;
+            }
+            @include respond-for-landscape(pt) {
+                @include respond-below(sm) {
+                    width: calc(100% - 5%);
+                }
+            }
+            @include respond-for-landscape(ld) {
+                @include respond-below(sm) {
+                    width: 60%;
+                    float: left;
+                }
+            }
             margin-bottom: 40px;
 
             .event-day {
                 color: $darkBlue800;
                 font-size: $eventBigFont;
+                @include respond-between(md, lg) {
+                    font-size: 40px;
+                }
                 display: block;
                 @extend .light-font;
             }
@@ -91,6 +139,9 @@
             .event-date {
                 color: $white;
                 font-size: $eventBigFont;
+                @include respond-between(md, lg) {
+                    font-size: 40px;
+                }
                 display: block;
                 @extend .light-font;
             }
@@ -115,11 +166,21 @@
                 &.carousel-control-prev {
                     left: auto;
                     right: 30px;
+                    @include respond-for-landscape(ld) {
+                        @include respond-below(sm) {
+                            right: 55px;
+                        }
+                    }
                 }
 
                 &.carousel-control-next {
                     left: auto;
                     right: 0px;
+                    @include respond-for-landscape(ld) {
+                        @include respond-below(sm) {
+                            right: 30px;
+                        }
+                    }
                 }
             }
         }
@@ -167,7 +228,14 @@
         ul {
             li {
                 padding: 10px 90px;
-
+                @include respond-between(md, lg){
+                    padding: 10px 45px;
+                }
+                @include respond-for-landscape(ld) {
+                    @include respond-below(sm) {
+                        padding: 10px 10px;
+                    }
+                }
                 &:hover {
                     background: $darkBlue1000;
                 }
@@ -183,5 +251,18 @@
                 }
             }
         }
+    }
+}
+.event-move{
+    position: absolute;
+    right: -29px;
+    background: $skyBlue1000;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    svg{
+        width: 12px;
+        height: 12px;
+        fill: #fff;
     }
 }

@@ -1,3 +1,68 @@
 .body-content-area {
     min-height: calc(100vh - 106px);
 }
+.feed-list {    
+    border-bottom: 1px solid $gray600;
+    .feed-section{
+        padding: 50px;
+        @include respond-below(sm) {
+            padding: 50px 20px;
+        }
+    }
+    .recent-images-icon {
+        width: 35px;
+        height: 35px;
+    }
+    .user-activity {
+        width: calc(100% - 45px);
+        font-size: 15px;
+    }
+    .article-date{
+        color: $gray600;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    h2{
+        margin-bottom: 35px;
+        font-size: 28px;
+    }
+}
+.article-action{
+    svg{
+        width: 20px;
+        height: 20px;
+        fill: $gray600;
+    }
+    .fabed{
+        svg{
+            fill: $skyBlue1000;
+        }
+    }
+}
+.feed-comment{
+    background: $gray400;
+    border-top: 1px solid $gray700;
+    .feed-comment-top{
+        padding: 0px 50px;
+        @include respond-below(sm) {
+            padding: 0px 20px;
+        }
+    }
+    .feed-comment-bottom {
+        border-top: 1px solid $gray500;
+        padding: 15px 50px;
+        @include respond-below(sm) {
+            padding: 15px 20px;
+        }
+        input[type="text"]{
+            width: 100%;
+            border: none;
+            outline: none;
+            background: transparent;            
+            @include placeholder-color($gray700);
+        }
+    }
+    .user-activity{
+        font-size: 15px;
+    }
+}

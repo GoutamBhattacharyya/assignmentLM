@@ -1,30 +1,34 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap");
-.activity-details, .who-to-follow .user-activity, .recent-activity .user-activity {
+.activity-details, .who-to-follow .user-activity, .user-activity {
   color: #999a97;
   font-size: 13px;
 }
-.activity-details .user-name, .who-to-follow .user-activity .user-name, .recent-activity .user-activity .user-name {
+.activity-details .user-name, .user-activity .user-name {
   color: #4c4947;
   font-weight: 600;
 }
-.activity-details .event-name, .who-to-follow .user-activity .event-name, .recent-activity .user-activity .event-name {
+.activity-details .event-name, .user-activity .event-name {
   color: #999a97;
   font-weight: 600;
 }
-.activity-details .user-designation, .who-to-follow .user-activity .user-designation, .recent-activity .user-activity .user-designation {
+.activity-details .user-designation, .user-activity .user-designation {
   color: #999a97;
   font-weight: 600;
   display: block;
 }
+.activity-details .comment-time, .user-activity .comment-time {
+  display: block;
+  font-size: 13px;
+}
 
-.rounded-image, .who-to-follow .recent-images-icon, .recent-activity .recent-images-icon {
+.rounded-image, .who-to-follow .recent-images-icon, .recent-images-icon {
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   border-radius: 50px;
   overflow: hidden;
 }
-.rounded-image img, .who-to-follow .recent-images-icon img, .recent-activity .recent-images-icon img {
+.rounded-image img, .who-to-follow .recent-images-icon img, .recent-images-icon img {
   width: 100%;
 }
 
@@ -9684,10 +9688,6 @@ h3 {
     border-color: #dee2e6;
   }
 }
-.container-fluid {
-  max-width: 1400px;
-}
-
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -9708,6 +9708,12 @@ h4 {
   padding-right: 50px;
   border-bottom: 1px solid #d5d5d5;
 }
+@media (max-width: 767px) {
+  .feed-header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 .feed-header .feed-menu ul {
   padding: 0px;
   margin: 0px;
@@ -9715,6 +9721,11 @@ h4 {
 .feed-header .feed-menu ul li {
   display: inline-block;
   padding: 0px 25px;
+}
+@media (max-width: 767px) {
+  .feed-header .feed-menu ul li {
+    padding: 0px 5px;
+  }
 }
 .feed-header .feed-menu ul li:first-child {
   padding-left: 0px;
@@ -9724,6 +9735,11 @@ h4 {
   font-size: 20px;
   display: block;
   padding: 0 0 17px 0;
+}
+@media (max-width: 767px) {
+  .feed-header .feed-menu ul li a {
+    font-size: 16px;
+  }
 }
 .feed-header .feed-menu ul li a:hover {
   text-decoration: none;
@@ -9739,6 +9755,9 @@ h4 {
   -webkit-box-shadow: inset 0 -7px 6px -7px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: inset 0 -7px 6px -7px rgba(0, 0, 0, 0.4);
   box-shadow: inset 0 -7px 6px -7px rgba(0, 0, 0, 0.4);
+}
+.feed-header .feed-header-right {
+  position: relative;
 }
 .feed-header .feed-header-right a {
   position: relative;
@@ -9770,12 +9789,60 @@ h4 {
   text-align: center;
 }
 
+.more-dp {
+  display: none;
+  background: #fff;
+  padding: 5px 0 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  z-index: 3;
+  right: 0px;
+  top: 35px;
+  width: 150px;
+}
+.more-dp:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 0px;
+  right: 10px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #fff transparent;
+  display: inline-block;
+  vertical-align: middle;
+}
+.more-dp div {
+  display: block;
+  padding: 0px 5px;
+  text-align: left;
+}
+.more-dp div a {
+  color: #999a97;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 0px !important;
+}
+
 .right-sidebar {
   background: #eeeeee;
-  padding: 30px;
+  padding: 30px 0px;
+}
+@media (max-width: 767px) {
+  .right-sidebar {
+    position: absolute;
+    z-index: 2;
+    left: -100vw;
+  }
 }
 .right-sidebar h3 {
-  padding: 0px;
+  padding: 0px 30px 0 30px;
   margin: 0 0 20px 0;
   font-size: 14px;
   text-transform: uppercase;
@@ -9784,7 +9851,10 @@ h4 {
 }
 
 .recent-activity li {
-  padding: 10px 0px;
+  padding: 10px 30px;
+}
+.recent-activity li:hover {
+  background: #d5d5d5;
 }
 .recent-activity .recent-images-icon {
   width: 40px;
@@ -9795,7 +9865,10 @@ h4 {
 }
 
 .who-to-follow li {
-  padding: 10px 0px;
+  padding: 10px 30px;
+}
+.who-to-follow li:hover {
+  background: #d5d5d5;
 }
 .who-to-follow .recent-images-icon {
   width: 55px;
@@ -9807,6 +9880,14 @@ h4 {
 
 .event-wrapper {
   background: #46529e;
+}
+@media (max-width: 991px) {
+  .event-wrapper {
+    position: absolute;
+    z-index: 2;
+    left: -100vw;
+    height: 100%;
+  }
 }
 .event-wrapper:after {
   content: "";
@@ -9831,6 +9912,11 @@ h4 {
   position: relative;
   z-index: 2;
 }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .profile-header {
+    margin-left: 45px;
+  }
+}
 .profile-header .profile-pic {
   width: 90px;
   overflow: hidden;
@@ -9848,9 +9934,24 @@ h4 {
 .event-calender {
   padding-top: 80px;
 }
+@media (orientation: portrait) and (max-width: 767px) {
+  .event-calender {
+    padding-top: 30px;
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  .event-calender {
+    padding-top: 20px;
+  }
+}
 .event-calender .custom-tab {
   margin-left: 90px;
   border: none;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .event-calender .custom-tab {
+    margin-left: 45px;
+  }
 }
 .event-calender .custom-tab li:first-child .nav-link {
   padding-left: 0px;
@@ -9872,20 +9973,56 @@ h4 {
 .event-calender #eventTabContent {
   padding-top: 50px;
 }
+@media (orientation: portrait) and (max-width: 767px) {
+  .event-calender #eventTabContent {
+    padding-top: 20px;
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  .event-calender #eventTabContent {
+    padding-top: 0px;
+  }
+}
 .event-calender #eventTabContent #event-day-slider {
   width: calc(100% - 18%);
   padding-left: 90px;
   margin-bottom: 40px;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .event-calender #eventTabContent #event-day-slider {
+    padding-left: 45px;
+  }
+}
+@media (orientation: portrait) and (max-width: 767px) {
+  .event-calender #eventTabContent #event-day-slider {
+    width: calc(100% - 5%);
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  .event-calender #eventTabContent #event-day-slider {
+    width: 60%;
+    float: left;
+  }
 }
 .event-calender #eventTabContent #event-day-slider .event-day {
   color: #8b91c8;
   font-size: 48px;
   display: block;
 }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .event-calender #eventTabContent #event-day-slider .event-day {
+    font-size: 40px;
+  }
+}
 .event-calender #eventTabContent #event-day-slider .event-date {
   color: #fff;
   font-size: 48px;
   display: block;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .event-calender #eventTabContent #event-day-slider .event-date {
+    font-size: 40px;
+  }
 }
 .event-calender #eventTabContent #event-day-slider .event-slider-control {
   width: 24px;
@@ -9906,9 +10043,19 @@ h4 {
   left: auto;
   right: 30px;
 }
+@media (orientation: landscape) and (max-width: 767px) {
+  .event-calender #eventTabContent #event-day-slider .event-slider-control.carousel-control-prev {
+    right: 55px;
+  }
+}
 .event-calender #eventTabContent #event-day-slider .event-slider-control.carousel-control-next {
   left: auto;
   right: 0px;
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  .event-calender #eventTabContent #event-day-slider .event-slider-control.carousel-control-next {
+    right: 30px;
+  }
 }
 .event-calender .event-week-content,
 .event-calender .event-month-content {
@@ -9941,6 +10088,16 @@ h4 {
 .event-calender .todays-events ul li {
   padding: 10px 90px;
 }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .event-calender .todays-events ul li {
+    padding: 10px 45px;
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  .event-calender .todays-events ul li {
+    padding: 10px 10px;
+  }
+}
 .event-calender .todays-events ul li:hover {
   background: #46529e;
 }
@@ -9953,8 +10110,107 @@ h4 {
   color: #fff;
 }
 
+.event-move {
+  position: absolute;
+  right: -29px;
+  background: #2dbaee;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+.event-move svg {
+  width: 12px;
+  height: 12px;
+  fill: #fff;
+}
+
 .body-content-area {
   min-height: calc(100vh - 106px);
+}
+
+.feed-list {
+  border-bottom: 1px solid #dbdadf;
+}
+.feed-list .feed-section {
+  padding: 50px;
+}
+@media (max-width: 767px) {
+  .feed-list .feed-section {
+    padding: 50px 20px;
+  }
+}
+.feed-list .recent-images-icon {
+  width: 35px;
+  height: 35px;
+}
+.feed-list .user-activity {
+  width: calc(100% - 45px);
+  font-size: 15px;
+}
+.feed-list .article-date {
+  color: #dbdadf;
+  font-size: 18px;
+  font-weight: 600;
+}
+.feed-list h2 {
+  margin-bottom: 35px;
+  font-size: 28px;
+}
+
+.article-action svg {
+  width: 20px;
+  height: 20px;
+  fill: #dbdadf;
+}
+.article-action .fabed svg {
+  fill: #2dbaee;
+}
+
+.feed-comment {
+  background: #f9f9f9;
+  border-top: 1px solid #d5d5d5;
+}
+.feed-comment .feed-comment-top {
+  padding: 0px 50px;
+}
+@media (max-width: 767px) {
+  .feed-comment .feed-comment-top {
+    padding: 0px 20px;
+  }
+}
+.feed-comment .feed-comment-bottom {
+  border-top: 1px solid #e7e7e7;
+  padding: 15px 50px;
+}
+@media (max-width: 767px) {
+  .feed-comment .feed-comment-bottom {
+    padding: 15px 20px;
+  }
+}
+.feed-comment .feed-comment-bottom input[type=text] {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.feed-comment .feed-comment-bottom input[type=text]::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #d5d5d5;
+}
+.feed-comment .feed-comment-bottom input[type=text]:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #d5d5d5;
+}
+.feed-comment .feed-comment-bottom input[type=text]::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #d5d5d5;
+}
+.feed-comment .feed-comment-bottom input[type=text]:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #d5d5d5;
+}
+.feed-comment .user-activity {
+  font-size: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
